@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'; // update
  import { db } from "../db/config";
- import {useParams} from 'react-router-dom';
- import { Trash2 } from 'react-feather';
+  import { Trash2 } from 'react-feather';
 
 const BookList = ( ) => {
   const [pic, setPic] = useState([]); // update
@@ -28,8 +27,7 @@ const BookList = ( ) => {
       .doc(id)
       .delete();
   };
-  let { id } = useParams();
-
+ 
   return (
     <div className='section section-books'>
       <div className='listContainer'>
