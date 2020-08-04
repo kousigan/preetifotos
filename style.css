@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap');
+ * {
+	font-family: 'Ropa Sans';
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+a{
+  text-decoration: none;
+  color:unset;
+}
+body {
+	background: #f2f2f2;
+}
+h1, h2, h3, h4, h5, h6{
+  font-weight: 400;
+}
+.logo{
+  width:90%;
+  padding:20px;   
+  margin:0 auto;
+  background: #fff;
+  position:sticky;
+  -webkit-position:-webkit-sticky;
+  top:0;
+}
+.sidemenu {
+	height: 100vh;
+	background: #fff;
+  overflow-y: auto;
+}
+
+.pure-form {
+	padding: 20px;
+}
+
+.pure-control-group label {
+	width: 150px;
+	text-align: right;
+	display: inline-block;
+	padding: 10px;
+}
+
+.pure-control-group input {
+	width: 300px;
+}
+
+.pure-button.button-success {
+	background: rgb(28, 184, 65);
+	color: #fff;
+}
+
+.pure-form label:empty {
+	margin: 0;
+}
+
+.pure-form p {
+	display: inline-block;
+}
+
+.pure-form p:empty {
+	margin: 0;
+}
+
+.preview img {
+	max-height: 200px;
+	margin: 10px 0;
+}
+
+progress[value="0"] {
+	display: none;
+}
+
+progress {
+	height: 4px;
+	width: 300px;
+}
+
+progress[value="100"] {
+	opacity: 0;
+	transition: opacity 0.3s ease-in 3s;
+}
+
+div .pure-form legend {
+	padding: 20px 10px;
+	background: #ddd;
+	text-transform: uppercase;
+	border-left: 4px solid #ccc;
+}
+
+.galleryItem {
+	height: 90px;
+  width:90px;
+  object-fit:cover;
+}
+.listItem {
+    border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border:1px solid #f2f2f2;
+    transition:all 0.1s ease-in;
+
+}
+.listItem:hover{
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.listImage img{
+  border-radius: 8px;
+  overflow: hidden;
+}
+.listDetails h3{
+  padding: 0 20px;
+  margin-bottom:0; 
+}
+
+.deleteImage{
+   text-align: center;
+  padding: 15px 0;
+  opacity:0;
+      transition:all 0.1s ease-in;
+
+}
+.listItem:hover .deleteImage{
+  opacity: 1;
+}
+.listContainer{
+  width: 90%;
+  margin:0 auto;
+}
+.photo-link{
+  padding: 0 20px;
+  color:#666;
+}
+.gItem{
+  width:240px;
+  height:240px;
+  margin:0 10px 10px 0;
+  float:left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:rgba(0,0,0,0.2)
+}
