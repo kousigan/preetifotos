@@ -5,7 +5,10 @@ import React, { useState, useEffect } from 'react'; // update
 
  const Gallery = () => {
   const [pic, setPic] = useState([]); // update
-
+  const [loadPic, setLoadPic] = useState({
+    visible:2,
+    error:false
+  })
   // add
   useEffect(() => {
     console.log('effect');
@@ -24,7 +27,7 @@ import React, { useState, useEffect } from 'react'; // update
 
   return(
     <div className="gallery">
-     {pic.map(picture=>(
+     {pic.slice(0,2).map(picture=>(
         
        
        <GalleryItem key={picture.id} title={picture.title} img={picture.image}/>
