@@ -5,7 +5,8 @@ const GalleryItem =(e)=>{
    
    
   return(
-    <div className="gItem">{details.title}
+    <div className="gItem">
+    <span>{details.title}</span> 
     <img src={details.image}/>
     </div>
   )

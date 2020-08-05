@@ -135,14 +135,35 @@ div .pure-form legend {
   padding: 0 20px;
   color:#666;
 }
+
 .gItem{
   width:240px;
   height:240px;
   margin:0 10px 10px 0;
   float:left;
+  position: relative;
+}
+
+.gItem img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.gItem span{
+  position: absolute;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  display:none;
+}
 
-  background:rgba(0,0,0,0.2)
+.gItem:hover span{
+  display: flex;
 }
