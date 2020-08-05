@@ -25,14 +25,18 @@ import React, { useState, useEffect } from 'react'; // update
     };
   }, []);
 
+  const loadMore=()=>{
+    return setLoadPic(loadPic+4)
+  }
   return(
     <div className="gallery">
      {pic.slice(0,2).map(picture=>(
         
        
        <GalleryItem key={picture.id} title={picture.title} img={picture.image}/>
-       
      ))}
+            <button className="pure-button"> Load more</button>
+
     </div>
   )
  }
