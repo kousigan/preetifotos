@@ -25,10 +25,10 @@ import React, { useState, useEffect } from 'react'; // update
   return(
     <div className="gallery">
      {pic.map(picture=>(
-       <div >
+        
        
        <GalleryItem key={picture.id} title={picture.title} img={picture.image}/>
-       </div>
+       
      ))}
     </div>
   )

@@ -14,7 +14,7 @@ a{
   color:unset;
 }
 body {
-	background: #f2f2f2;
+ 
 }
 h1, h2, h3, h4, h5, h6{
   font-weight: 400;
@@ -27,6 +27,12 @@ h1, h2, h3, h4, h5, h6{
   position:sticky;
   -webkit-position:-webkit-sticky;
   top:0;
+}
+.main{
+  padding: 20px 20px 0 0;
+  box-sizing:border-box;
+   height:calc( 100vh - 20px );
+  overflow-y:auto;
 }
 .sidemenu {
 	height: 100vh;
@@ -137,33 +143,34 @@ div .pure-form legend {
 }
 
 .gItem{
-  width:240px;
-  height:240px;
-  margin:0 10px 10px 0;
-  float:left;
+  width:100%;
+  border:1px solid #ddd;
+  margin:0 0 20px 0;
+  display: inline-block;
   position: relative;
+  border-radius: 4px;
 }
 
 .gItem img{
   width:100%;
   height:100%;
+  max-height: 400px;
   object-fit:cover;
 }
 
 .gItem span{
-  position: absolute;
-  background:rgba(0,0,0,0.6);
-  color:#fff;
-  top:0;
-  left:0;
-  height:100%;
-  width:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display:none;
+ color:#333;
+  padding:10px;
+  display: flex; 
 }
 
 .gItem:hover span{
   display: flex;
+}
+.imageDetails{
+  padding:10px;
+}
+.gallery{
+  column-count: 3;
+  column-gap: 20px;
 }

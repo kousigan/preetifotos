@@ -8,6 +8,7 @@ const GalleryItem =(e)=>{
     <div className="gItem">
     <span>{details.title}</span> 
     <img src={details.image}/>
+    <div className="imageDetails"><button className="pure-button" >Like</button></div>
     </div>
   )
 }

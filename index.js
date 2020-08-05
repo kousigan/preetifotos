@@ -22,7 +22,7 @@ function App() {
   {
     path:'/',
     exact:true,
-    sidebar: () => <div>home!</div>
+    sidebar: () => <span></span>
    },
    {
     path:'/upload',
