@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Img from 'react-cool-img';
 
 const GalleryItem =(e)=>{
   const [details,setDetails] = useState({title:e.title,image:e.img});
@@ -7,7 +8,7 @@ const GalleryItem =(e)=>{
   return(
     <div className="gItem">
     <span>{details.title}</span> 
-    <img src={details.image}/>
+    <Img src={details.image} debounce={1000} placeholder={details.image} cache />
     <div className="imageDetails"><button className="pure-button" >Like</button></div>
     </div>
   )

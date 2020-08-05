@@ -6,6 +6,7 @@
     "firebase": "7.17.1",
     "purecss": "^2.0.3",
     "react": "16.13.1",
+    "react-cool-img": "^1.2.1",
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",
     "react-router-dom": "5.2.0"
