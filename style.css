@@ -171,6 +171,10 @@ div .pure-form legend {
   padding:10px;
 }
 .gallery{
-  column-count: 3;
-  column-gap: 20px;
+  /* columns: 3 250px;
+  column-gap: 20px; */
+}
+.gallerySpan{
+  column-span: all;
+  text-align: center;
 }

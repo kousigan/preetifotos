@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react'; // update
- import { db } from "../db/config";
- import GalleryItem  from './galleryItem';
+import React, { useState, useEffect } from "react"; // update
+import { db } from "../db/config";
+import GalleryItem from "./galleryItem";
+import Masonry from "react-masonry-component";
 
-
- const Gallery = () => {
+const Gallery = () => {
   const [pic, setPic] = useState([]); // update
   const [loadPic, setLoadPic] = useState({
-    visible:2,
-    error:false
-  })
+    visible: 3,
+    error: false
+  });
   // add
   useEffect(() => {
-    console.log('effect');
-    const unsub = db.collection('photos').onSnapshot(snapshot => {
+    console.log("effect");
+    const unsub = db.collection("photos").onSnapshot(snapshot => {
       const allpic = snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
@@ -20,25 +20,51 @@ import React, { useState, useEffect } from 'react'; // update
       setPic(allpic);
     });
     return () => {
-      console.log('cleanup gallery');
+      console.log("cleanup gallery");
       unsub();
     };
   }, []);
 
-  const loadMore=()=>{
-    return setLoadPic(loadPic+4)
-  }
-  return(
+  const loadMore = () => {
+    const i = loadPic.visible + 2;
+    setLoadPic({
+      visible: i
+    });
+    console.log(loadPic.visible);
+  };
+
+  const masonryOptions = {
+    transitionDuration: 0
+  };
+
+  const imagesLoadedOptions = { background: ".my-bg-image-el" };
+
+  return (
     <div className="gallery">
-     {pic.slice(0,2).map(picture=>(
-        
-       
-       <GalleryItem key={picture.id} title={picture.title} img={picture.image}/>
-     ))}
-            <button className="pure-button"> Load more</button>
+      <Masonry
+        className={"my-gallery-class"} // default ''
+        elementType={"div"} // default 'div'
+        options={masonryOptions} // default {}
+        disableImagesLoaded={false} // default false
+        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+        imagesLoadedOptions={imagesLoadedOptions} // default {}
+      >
+        {pic.map(picture => (
+          <GalleryItem
+            key={picture.id}
+            title={picture.title}
+            img={picture.image}
+          />
+        ))}
+      </Masonry>
 
+      <div className="gallerySpan">
+        <button className="pure-button button-large" onClick={loadMore}>
+          Load more pics
+        </button>
+      </div>
     </div>
-  )
- }
+  );
+};
 
- export default Gallery;
+export default Gallery;

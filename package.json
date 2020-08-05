@@ -9,6 +9,7 @@
     "react-cool-img": "^1.2.1",
     "react-dom": "16.13.1",
     "react-feather": "^2.0.8",
+    "react-masonry-component": "^6.2.1",
     "react-router-dom": "5.2.0"
   },
   "scripts": {
