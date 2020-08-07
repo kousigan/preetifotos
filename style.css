@@ -143,9 +143,9 @@ div .pure-form legend {
 }
 
 .gItem{
-  width:100%;
+  width:30%;
   border:1px solid #ddd;
-  margin:0 0 20px 0;
+  margin:0 20px 20px 0;
   display: inline-block;
   position: relative;
   border-radius: 4px;
@@ -177,4 +177,32 @@ div .pure-form legend {
 .gallerySpan{
   column-span: all;
   text-align: center;
+}
+@media screen and (max-width:768px){
+  .pure-u-1-4.sidemenu ,.pure-u-3-4.main{
+    width: 100% !important;
+    height:auto !important;
+  }
+  .pure-u-3-4.main{
+    padding-left:0;
+  }
+  .gItem{
+    width:calc( 49% - 20px );
+     margin:0 0 20px 20px;
+  }
+  .logo{
+    display: flex;
+    padding:0;
+    margin:0;
+  }
+  .pure-u-1-4.sidemenu{
+    position:sticky;
+    z-index: 9999;
+    padding:0 0 0 20px;
+    top:0;
+  }
+  .logo img{
+    width: 50px;
+    margin-right:20px;
+  }
 }

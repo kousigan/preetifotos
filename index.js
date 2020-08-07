@@ -21,7 +21,6 @@ function App() {
  const routes =[
   {
     path:'/',
-    exact:true,
     sidebar: () => <span></span>
    },
    {
