@@ -154,7 +154,7 @@ div .pure-form legend {
 .gItem img{
   width:100%;
   height:100%;
-  max-height: 400px;
+  height: 300px;
   object-fit:cover;
 }
 
@@ -169,7 +169,31 @@ div .pure-form legend {
 }
 .imageDetails{
   padding:10px;
+  text-align: right;
+  position:relative;
 }
+.imageDetails .likeCount{
+  position: absolute;
+}
+.imageDetails .like{
+  padding: 0;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border-radius: 50%;
+}
+.imageDetails .like.liked
+{
+  background: #ef3e5f;
+ }
+.imageDetails .like svg{
+  position:relative;
+  top:3px;
+}
+.imageDetails .like.liked svg
+{
+  color: #fff;
+ }
 .gallery{
   /* columns: 3 250px;
   column-gap: 20px; */

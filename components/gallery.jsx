@@ -6,7 +6,7 @@ import Masonry from "react-masonry-component";
 const Gallery = () => {
   const [pic, setPic] = useState([]); // update
   const [loadPic, setLoadPic] = useState({
-    visible: 3,
+    visible: 9,
     error: false
   });
   // add
@@ -26,7 +26,7 @@ const Gallery = () => {
   }, []);
 
   const loadMore = () => {
-    const i = loadPic.visible + 2;
+    const i = loadPic.visible + 6;
     setLoadPic({
       visible: i
     });
@@ -52,8 +52,10 @@ const Gallery = () => {
         {pic.slice(0,loadPic.visible).map(picture => (
           <GalleryItem
             key={picture.id}
+            uid={picture.id}
             title={picture.title}
             img={picture.image}
+            like={picture.like}
           />
         ))}
       </Masonry>

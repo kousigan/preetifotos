@@ -15,6 +15,7 @@ import TopMenu from "./components/topmenu";
 import Upload from "./components/upload";
 import BookList from "./components/list";
 import Gallery from "./components/gallery";
+import Post from "./components/post";
 
 function App() {
   
@@ -48,6 +49,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Gallery} />
             <Route path="/upload" component={Upload} />
+              <Route path="/post/:id" component={Post} />
           </Switch>
         </div>
       </div>
