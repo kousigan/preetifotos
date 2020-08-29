@@ -49,7 +49,7 @@ const Gallery = () => {
         updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
         imagesLoadedOptions={imagesLoadedOptions} // default {}
       >
-        {pic.map(picture => (
+        {pic.slice(0,loadPic.visible).map(picture => (
           <GalleryItem
             key={picture.id}
             title={picture.title}
