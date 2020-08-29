@@ -41,7 +41,7 @@ const Post = () => {
     setComment({
       comment: ''
     });
-    unsub();
+    
   };
   useEffect(() => {
     console.log("effect");
