@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { db } from "../db/config";
 import Img from "react-cool-img";
@@ -10,6 +10,7 @@ const Post = () => {
   const [comment,setComment]=useState({
       content: ''
   });
+  const [commentList,setCommentList]=useState([]);
   let { id } = useParams();
   const loaderImage = "https://kousigan.github.io/inkjs/preloader.svg";
 
@@ -32,8 +33,29 @@ const Post = () => {
 
 
   const handleDetails = e => {
-    setBook({ ...book, [e.target.name]: e.target.value });
+    setComment({ ...comment, [e.target.name]: e.target.value });
   };
+    const handleUpload = e => {
+    e.preventDefault();
+    db.collection('photos').add(comment); // update
+    setComment({
+      comment: ''
+    });
+  };
+  useEffect(() => {
+    console.log("effect");
+    const unsub = db.collection("photos").doc(id).collection("comments").onSnapshot(snapshot => {
+      const allComments = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setCommentList(allComments);
+    });
+    return () => {
+      console.log("cleanup Comments");
+      unsub();
+    };
+  }, []);
   return (
     <div class="pure-g">
       <div class="pure-u-2-3 postImageContainer">
@@ -53,6 +75,8 @@ const Post = () => {
            <fieldset>
                      <textarea type="text" placeholder="Enter comments" className="enterComments"></textarea>
           </fieldset>
+                    <button className="pure-button button-success" onClick={handleUpload} >Upload</button>
+
         </form>
       </div>
     </div>
