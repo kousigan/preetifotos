@@ -77,7 +77,7 @@ const Post = () => {
         <h2>Comments</h2>
                 {commentList.map(comm => (
                   <div className="pure-g commentContainer">
-                   <div class="pure-u-1-8">
+                   <div class="pure-u-1-8 userIcon">
                     <User/>
                    </div>
                    <div class="pure-u-7-8">

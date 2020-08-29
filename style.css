@@ -236,7 +236,10 @@ display:flex;
    padding: 5px;
  }
  .commentContainer{
-   
+   margin: 10px 0;
+ }
+ .userIcon svg{
+   stroke: #cfcaca;
  }
 @media screen and (max-width:768px){
   .pure-u-1-4.sidemenu ,.pure-u-3-4.main{
