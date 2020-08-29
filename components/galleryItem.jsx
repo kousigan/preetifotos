@@ -44,7 +44,7 @@ const GalleryItem =(e)=>{
   return(
     <div className="gItem">
     <span>{details.title}</span>  
-     <Link to='/post/'+{details.key}  exact >
+     <Link to={`/post/${details.key}`}  exact >
      <Img src={details.image} debounce={1000} placeholder={loaderImage}  cache />
      </Link>
     <div className="imageDetails">
