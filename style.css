@@ -202,6 +202,16 @@ div .pure-form legend {
   column-span: all;
   text-align: center;
 }
+
+.postImage{
+  width: 96%;
+  margin: 2%;
+}
+.showLikes{
+  display:flex;
+  align-items: center;
+  justify-content: end;
+}
 @media screen and (max-width:768px){
   .pure-u-1-4.sidemenu ,.pure-u-3-4.main{
     width: 100% !important;
