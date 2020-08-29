@@ -43,7 +43,9 @@ h1, h2, h3, h4, h5, h6{
 .pure-form {
 	padding: 20px;
 }
-
+.pure-form.comments{
+  padding:15px 0 0 0;
+}
 .pure-control-group label {
 	width: 150px;
 	text-align: right;
@@ -175,7 +177,7 @@ div .pure-form legend {
 .imageDetails .likeCount{
   position: absolute;
 }
-.imageDetails .like{
+.imageDetails .like, .showLikes .like{
   padding: 0;
   width: 36px;
   height: 36px;
@@ -186,7 +188,7 @@ div .pure-form legend {
 {
   background: #ef3e5f;
  }
-.imageDetails .like svg{
+.imageDetails .like svg,.showLikes .like svg{
   position:relative;
   top:3px;
 }
@@ -204,14 +206,29 @@ div .pure-form legend {
 }
 
 .postImage{
-  width: 96%;
-  margin: 2%;
+  width: 98%;
+  margin: 15px 2% 0 0;
+  max-height: 98vh;
+  object-fit: contain;
+}
+.postImageContainer{
+text-align:center;
+display:flex;
+   flex-direction: column; 
+}
+.postImageContainer h2{
+  text-align: left;
 }
 .showLikes{
   display:flex;
   align-items: center;
-  justify-content: end;
-}
+  justify-content: space-evenly;
+ }
+ .enterComments{
+   max-height: 200px;
+   width: 320px; 
+    max-width: 320px; 
+ }
 @media screen and (max-width:768px){
   .pure-u-1-4.sidemenu ,.pure-u-3-4.main{
     width: 100% !important;
