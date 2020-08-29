@@ -229,6 +229,15 @@ display:flex;
    width: 320px; 
     max-width: 320px; 
  }
+ .commentContent{
+   background: #f1f2f2;
+   border-radius: 3px;
+   margin: 2px 0;
+   padding: 5px;
+ }
+ .commentContainer{
+   
+ }
 @media screen and (max-width:768px){
   .pure-u-1-4.sidemenu ,.pure-u-3-4.main{
     width: 100% !important;

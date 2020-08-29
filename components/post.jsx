@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { db } from "../db/config";
 import Img from "react-cool-img";
-import { Heart } from 'react-feather';
+import { Heart, User } from 'react-feather';
 
 const Post = () => {
   const [check, setLike] = useState(false);
   const [post, setPost] = useState({});
   const [comment,setComment]=useState({
+      username:'',
       content: ''
   });
   const [commentList,setCommentList]=useState([]);
@@ -37,9 +38,11 @@ const Post = () => {
   };
     const handleUpload = e => {
     e.preventDefault();
-    db.collection('photos').doc(id).collection('comments').add(comment); // update
+    console.log(comment)
+   db.collection('photos').doc(id).collection('comments').add(comment); // update
     setComment({
-      comment: ''
+      username:'',
+      content: ''
     });
     
   };
@@ -73,13 +76,23 @@ const Post = () => {
       <div class="pure-u-1-3">
         <h2>Comments</h2>
                 {commentList.map(comm => (
-                  <p key={comm.id}>{comm.content}</p>
+                  <div className="pure-g commentContainer">
+                   <div class="pure-u-1-8">
+                    <User/>
+                   </div>
+                   <div class="pure-u-7-8">
+                   <span>{comm.username}</span>
+                    <p className="commentContent" key={comm.id}>{comm.content}</p>
+                  </div>
+                  </div>
                 ))}
         <form class="pure-form comments">
            <fieldset>
-                     <textarea type="text" placeholder="Enter comments" className="enterComments"></textarea>
+                    <input type="text" value={comment.username} placeholder="username" name="username" onChange={handleDetails}/>
+                    <p> Please do not leave username empty</p>
+                     <textarea type="text" placeholder="Enter comments" className="enterComments"  name="content" value={comment.content} onChange={handleDetails}></textarea>
           </fieldset>
-                    <button className="pure-button button-success" onClick={handleUpload} >Upload</button>
+                    <button className="pure-button button-success" onClick={handleUpload} >Add Comments</button>
 
         </form>
       </div>
