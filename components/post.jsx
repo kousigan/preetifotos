@@ -71,6 +71,9 @@ const Post = () => {
       </div>
       <div class="pure-u-1-3">
         <h2>Comments</h2>
+                {commentList.map(comm => (
+                  <p key={comm.id}>{comm.content}</p>
+                ))}
         <form class="pure-form comments">
            <fieldset>
                      <textarea type="text" placeholder="Enter comments" className="enterComments"></textarea>
