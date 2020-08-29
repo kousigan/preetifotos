@@ -37,10 +37,11 @@ const Post = () => {
   };
     const handleUpload = e => {
     e.preventDefault();
-    db.collection('photos').add(comment); // update
+    db.collection('photos').doc(id).collection('comments').add(comment); // update
     setComment({
       comment: ''
     });
+    unsub();
   };
   useEffect(() => {
     console.log("effect");
