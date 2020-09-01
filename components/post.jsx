@@ -62,7 +62,7 @@ const Post = () => {
   }, []);
   return (
     <div class="pure-g">
-      <div class="pure-u-2-3 postImageContainer">
+      <div class="  pure-u-2-3 postImageContainer">
       <div class="pure-g">
           <div class="pure-u-2-3">
             <h2>{post.title}</h2>
@@ -73,14 +73,14 @@ const Post = () => {
         </div>
         <Img src={post.image} className="postImage" placeholder={loaderImage} />
       </div>
-      <div class="pure-u-1-3">
+      <div class="  pure-u-md-1-3">
         <h2>Comments</h2>
                 {commentList.map(comm => (
                   <div className="pure-g commentContainer">
                    <div class="pure-u-1-8 userIcon">
                     <User/>
                    </div>
-                   <div class="pure-u-7-8">
+                   <div className="pure-u-7-8">
                    <span>{comm.username}</span>
                     <p className="commentContent" key={comm.id}>{comm.content}</p>
                   </div>
@@ -89,7 +89,7 @@ const Post = () => {
         <form class="pure-form comments">
            <fieldset>
                     <input type="text" value={comment.username} placeholder="username" name="username" onChange={handleDetails}/>
-                    <p> Please do not leave username empty</p>
+                    <div className="tip"> Please do not leave username empty</div>
                      <textarea type="text" placeholder="Enter comments" className="enterComments"  name="content" value={comment.content} onChange={handleDetails}></textarea>
           </fieldset>
                     <button className="pure-button button-success" onClick={handleUpload} >Add Comments</button>
